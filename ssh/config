@@ -1,0 +1,130 @@
+# Include /Users/ville.kauppila/.colima/ssh_config
+Include /Users/ville.kauppila/repos/github.com/solita-internal/solitacloud_scs-ssh-config/solita-ssh-config
+
+Host github.com-personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/villerepo
+
+Host github.com
+  HostName github.com
+  User git
+  #  IdentityFile ~/.ssh/m_ed25519
+  IdentityFile ~/.ssh/id_rsa_solita
+
+Host xdmaas-ado
+    HostName ssh.dev.azure.com
+    User git
+    IdentityFile ~/.ssh/general_rsa
+    IdentitiesOnly yes
+
+Host xdm-sandbox
+    HostName ssh.dev.azure.com
+    User git
+    IdentityFile ~/.ssh/sandbox_ado_rsa
+    IdentitiesOnly yes
+
+Host nc_devops
+    Hostname ssh.dev.azure.com
+    User git
+    IdentityFile ~/.ssh/nc_devops
+    IdentitiesOnly yes
+
+Host omasp 
+    Hostname ssh.dev.azure.com
+    User git
+    IdentityFile ~/.ssh/general_rsa
+    IdentitiesOnly yes
+
+Host fingrid
+    Hostname ssh.dev.azure.com
+    User git
+    IdentityFile ~/.ssh/fingrid
+    IdentitiesOnly yes
+
+Host github.solita.fi
+    HostName github.solita.fi     
+    IdentityFile ~/.ssh/ghent
+    IdentitiesOnly yes
+
+Host solitaxdm
+    User ec2-user
+    Hostname i-0e59a95b23230b8c6
+    IdentityFile "~/.ssh/my_rsa"
+    LocalForward 54321 solitaxdm.cluster-cnliuggicxcp.eu-west-1.rds.amazonaws.com:5432
+    ServerAliveInterval 60
+    ProxyCommand aws ssm start-session --target %h --document-name AWS-StartSSHSession
+
+Host xDMaaS
+    User ville.kauppila
+    Hostname c12345-dev.postgres.database.azure.com
+    IdentityFile "~/.ssh/agiledev"
+    LocalForward 54321 c12345-dev.postgres.database.azure.com:5432
+    MACs hmac-sha2-256
+    ServerAliveInterval 60
+
+Host KC-dev
+    User ville.kauppila
+    Hostname c24984-bastion.active.agilexdm.com
+    IdentityFile "~/.ssh/villek_kc"
+    LocalForward 54321 c24984-dev.postgres.database.azure.com:5432
+    MACs hmac-sha2-256
+    ServerAliveInterval 60
+
+Host KC-dev-f
+    User ville.kauppila
+    Hostname c24984-bastion.active.agilexdm.com
+    IdentityFile "~/.ssh/villek_kc"
+    LocalForward 54321 c24984-dev-flexi.postgres.database.azure.com:5432
+    MACs hmac-sha2-256
+    ServerAliveInterval 60
+
+Host KC-qa
+    User ville.kauppila
+    Hostname c24984-bastion.active.agilexdm.com
+    IdentityFile "~/.ssh/villek_kc"
+    LocalForward 54321 c24984-qa.postgres.database.azure.com:5432
+    MACs hmac-sha2-256
+    ServerAliveInterval 60
+
+Host KC-tr
+    User ville.kauppila
+    Hostname c24984-bastion.active.agilexdm.com
+    IdentityFile "~/.ssh/villek_kc"
+    LocalForward 54321 c24984-training.postgres.database.azure.com:5432
+    MACs hmac-sha2-256
+    ServerAliveInterval 60
+
+Host KC-prod
+    User ville.kauppila
+    Hostname c24984-bastion.active.agilexdm.com
+    IdentityFile "~/.ssh/villek_kc"
+    LocalForward 54321 c24984-prod.postgres.database.azure.com:5432
+    MACs hmac-sha2-256
+    ServerAliveInterval 60
+
+Host vs-ssh.visualstudio.com
+    IdentityFile ~/.ssh/kc_ado
+    IdentitiesOnly yes
+
+Host ccs-jenkins.solitacloud.fi
+  User ville.kauppila
+  IdentityFile ~/.ssh/ansiblerole_scs-users
+  IdentitiesOnly yes
+
+Host klh-gen2-* klh-prod-lah-* klh-preprod-hel-* dna-graylog* dna-mongo* dna-es-* dna-logstash* *.dnacloud.fi *.clouddw.dna.fi dna-es-coord* dna-es-colddata* dna-ra-* dna-sibbe-* dna-profileapi-* *.dna.fi
+    User a0680873
+    IdentityFile ~/.ssh/dna_rsa
+
+Host xdm-sandbox
+  User ville.kauppila
+
+Host * 
+  PubkeyAcceptedKeyTypes=+ssh-dss
+
+Host * !ssh.dev.azure.com !*.dna.fi !*.dnacloud.fi
+  IdentityFile ~/.ssh/solita_base_ed25519
+  UseKeychain yes
+  AddKeysToAgent yes
+  StrictHostKeyChecking no
+  PubkeyAcceptedKeyTypes=+ssh-dss
