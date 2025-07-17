@@ -18,4 +18,4 @@ git_branch() {
     echo " ($branch)"
   fi
 }
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
