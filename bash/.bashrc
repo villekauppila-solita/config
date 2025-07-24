@@ -6,6 +6,8 @@ alias ls='ls -G'
 alias nc-pw='lpass show -c --password "Azure NC Admin"'
 alias gtdw='cd repos/github.com/villekauppila-solita/GTD/'
 alias gtdp='cd repos/github.com/almenac/GTD'
+alias initmfa="/Users/ville/repos/github.com/solita-internal/solitacloud_aws-tools/"
+
 #. "$HOME/.cargo/env"
 
-set -o emacs
+#set -o emacs

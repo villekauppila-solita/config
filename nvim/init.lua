@@ -14,11 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     require 'plugins.autocomplete',
     require 'plugins.treesitter',
---    require 'plugins.color_gruvbox',
+    require 'plugins.color_gruvbox',
 --    require 'plugins.color_gruvbox-material',
 --    require 'plugins.color_tokyonight',
 --    require 'plugins.color_nord',
-    require 'plugins.color_catpuccin',
+--    require 'plugins.color_catpuccin',
 --    require 'plugins.neorg',
     require 'plugins.lazygit',
 --    require 'plugins.oil',

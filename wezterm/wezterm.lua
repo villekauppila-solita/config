@@ -36,8 +36,8 @@ config.font_size = 13.0
 -- This is used to make my foreground (text, etc) brighter than my background
 config.foreground_text_hsb = {
 	hue = 1.0,
-	saturation = 1.1,
-	brightness = 0.8,
+	saturation = 1.0,
+	brightness = 0.9,
 }
 
 return config
