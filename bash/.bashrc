@@ -11,3 +11,6 @@ alias initmfa="/Users/ville/repos/github.com/solita-internal/solitacloud_aws-too
 #. "$HOME/.cargo/env"
 
 #set -o emacs
+
+export EDITOR=nvim
+export VISUAL=nvim
